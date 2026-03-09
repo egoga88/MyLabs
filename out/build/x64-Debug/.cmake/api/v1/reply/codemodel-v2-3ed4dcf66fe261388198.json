@@ -1,0 +1,187 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "4.1"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "modules",
+					"jsonFile" : "directory-modules-Debug-7b6b9df59a6e09a69f15.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "4.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "modules",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "lab1",
+					"jsonFile" : "directory-lab1-Debug-a9608a3baf0ba491b46d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "4.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "lab1",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "lab2",
+					"jsonFile" : "directory-lab2-Debug-a34de045653a0b808c91.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "4.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "lab2",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "lab3",
+					"jsonFile" : "directory-lab3-Debug-ed0bdeb47ddde133275e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "4.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "lab3",
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "my_labs",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "lab1",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "lab2",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "lab3",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "common_mod::@9b7b1f9db13f92153135",
+					"jsonFile" : "target-common_mod-Debug-26b52ffd115570634364.json",
+					"name" : "common_mod",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "lab1::@e3a54a2ab40fd51109ef",
+					"jsonFile" : "target-lab1-Debug-eacd156310580d15320d.json",
+					"name" : "lab1",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "lab2::@67615d46f9a62e8e5e39",
+					"jsonFile" : "target-lab2-Debug-07cd0d12176011295a27.json",
+					"name" : "lab2",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "lab3::@719c9ac8603c291eb7d1",
+					"jsonFile" : "target-lab3-Debug-caddac30e7ad6c8e5d49.json",
+					"name" : "lab3",
+					"projectIndex" : 3
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug",
+		"source" : "C:/Users/Teymur/Desktop/OOP/LABS"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

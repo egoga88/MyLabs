@@ -1,0 +1,21 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "lab2\\CMakeFiles\\lab2.dir\\main.cpp.obj",
+            "outputs": [
+                "C:\\Users\\Teymur\\Desktop\\OOP\\LABS\\out\\build\\x64-Debug\\vc140.pdb",
+                "lab2\\CMakeFiles\\lab2.dir\\main.cpp.obj.ddi"
+            ],
+            "requires": [
+                {
+                    "logical-name": "std"
+                },
+                {
+                    "logical-name": "LabUtils"
+                }
+            ]
+        }
+    ]
+}

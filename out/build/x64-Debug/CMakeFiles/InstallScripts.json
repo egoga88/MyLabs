@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/cmake_install.cmake",
+		"C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/modules/cmake_install.cmake",
+		"C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/lab1/cmake_install.cmake",
+		"C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/lab2/cmake_install.cmake",
+		"C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/lab3/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,15 @@
+C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/CMakeFiles/__cmake_cxx23.dir
+C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/modules/CMakeFiles/common_mod.dir
+C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/modules/CMakeFiles/edit_cache.dir
+C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/modules/CMakeFiles/rebuild_cache.dir
+C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/lab1/CMakeFiles/lab1.dir
+C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/lab1/CMakeFiles/edit_cache.dir
+C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/lab1/CMakeFiles/rebuild_cache.dir
+C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/lab2/CMakeFiles/lab2.dir
+C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/lab2/CMakeFiles/edit_cache.dir
+C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/lab2/CMakeFiles/rebuild_cache.dir
+C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/lab3/CMakeFiles/lab3.dir
+C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/lab3/CMakeFiles/edit_cache.dir
+C:/Users/Teymur/Desktop/OOP/LABS/out/build/x64-Debug/lab3/CMakeFiles/rebuild_cache.dir

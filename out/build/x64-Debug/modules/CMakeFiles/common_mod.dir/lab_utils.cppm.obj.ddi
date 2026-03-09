@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "modules\\CMakeFiles\\common_mod.dir\\lab_utils.cppm.obj",
+            "outputs": [
+                "C:\\Users\\Teymur\\Desktop\\OOP\\LABS\\out\\build\\x64-Debug\\vc140.pdb",
+                "modules\\CMakeFiles\\common_mod.dir\\lab_utils.cppm.obj.ddi",
+                "LabUtils.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "LabUtils",
+                    "source-path": "c:\\users\\teymur\\desktop\\oop\\labs\\modules\\lab_utils.cppm",
+                    "is-interface": true
+                }
+            ],
+            "requires": [
+                {
+                    "logical-name": "std"
+                }
+            ]
+        }
+    ]
+}

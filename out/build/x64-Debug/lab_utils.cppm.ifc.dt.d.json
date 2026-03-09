@@ -1,0 +1,10 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\teymur\\desktop\\oop\\labs\\modules\\lab_utils.cppm",
+        "ProvidedModule": "LabUtils",
+        "Includes": [],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

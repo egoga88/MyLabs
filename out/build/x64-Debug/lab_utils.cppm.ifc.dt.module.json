@@ -1,0 +1,27 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "lab_utils.obj",
+            "outputs": [
+                "C:\\Users\\Teymur\\Desktop\\OOP\\LABS\\vc140.pdb",
+                "C:\\Users\\Teymur\\Desktop\\OOP\\LABS\\out\\build\\x64-Debug\\lab_utils.cppm.ifc.dt.module.json",
+                "C:\\Users\\Teymur\\Desktop\\OOP\\LABS\\out\\build\\x64-Debug\\lab_utils.cppm.ifc.dt.d.json",
+                "C:\\Users\\Teymur\\Desktop\\OOP\\LABS\\out\\build\\x64-Debug\\LabUtils.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "LabUtils",
+                    "source-path": "c:\\users\\teymur\\desktop\\oop\\labs\\modules\\lab_utils.cppm",
+                    "is-interface": true
+                }
+            ],
+            "requires": [
+                {
+                    "logical-name": "std"
+                }
+            ]
+        }
+    ]
+}
