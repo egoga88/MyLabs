@@ -1,3 +1,0 @@
-ninja_dyndep_version = 1.0
-build lab2\CMakeFiles\lab2.dir\main.cpp.obj: dyndep | CMakeFiles\__cmake_cxx23.dir\std.ifc modules\CMakeFiles\common_mod.dir\LabUtils.ifc
-
