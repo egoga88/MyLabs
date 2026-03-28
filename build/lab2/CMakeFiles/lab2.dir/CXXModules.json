@@ -1,0 +1,42 @@
+{
+	"modules" : {},
+	"references" : 
+	{
+		"LabUtils" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "modules\\CMakeFiles\\common_mod.dir\\LabUtils.ifc"
+		},
+		"lab2_utils" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "lab2\\CMakeFiles\\lab2_utils.dir\\lab2_utils.ifc"
+		},
+		"std" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "CMakeFiles\\__cmake_cxx23.dir\\std.ifc"
+		},
+		"std.compat" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "CMakeFiles\\__cmake_cxx23.dir\\std.compat.ifc"
+		}
+	},
+	"usages" : 
+	{
+		"LabUtils" : 
+		[
+			"std"
+		],
+		"lab2_utils" : 
+		[
+			"LabUtils",
+			"std"
+		],
+		"std.compat" : 
+		[
+			"std"
+		]
+	}
+}

@@ -1,0 +1,35 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "MSVC",
+	"compiler-id" : "MSVC",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : 
+	{
+		"modules/CMakeFiles/common_mod.dir/lab_utils.cppm.obj" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "C:/Users/Teymur/Desktop/OOP/LABS/MyLabs/modules/lab_utils.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		}
+	},
+	"database-info" : null,
+	"dir-cur-bld" : "C:/Users/Teymur/Desktop/OOP/LABS/MyLabs/build/modules",
+	"dir-cur-src" : "C:/Users/Teymur/Desktop/OOP/LABS/MyLabs/modules",
+	"dir-top-bld" : "C:/Users/Teymur/Desktop/OOP/LABS/MyLabs/build",
+	"dir-top-src" : "C:/Users/Teymur/Desktop/OOP/LABS/MyLabs",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : [],
+	"language" : "CXX",
+	"linked-target-dirs" : 
+	[
+		"C:/Users/Teymur/Desktop/OOP/LABS/MyLabs/build/CMakeFiles/__cmake_cxx23.dir"
+	],
+	"module-dir" : "C:/Users/Teymur/Desktop/OOP/LABS/MyLabs/build/modules/CMakeFiles/common_mod.dir",
+	"sources" : {}
+}

@@ -3,22 +3,23 @@ export import std;
 
 export module LabUtils;
 
+void PrintSeparLine(int size);
 
-export void printMetadata(int labnum, std::string author, int variant = 1, std::string group = "6113") {
-    std::println("-----------------------");
+export void PrintMetadata(int labnum, std::string author, int variant = 1, std::string group = "6113") {
+    PrintSeparLine(25);
     std::println("Лабораторная №{}", labnum);
     std::println("Группа: {}", group);
     std::println("Автор: {}", author);
     std::println("Вариант: {}", variant);
-    std::println("-----------------------");
+    PrintSeparLine(25);
 }
-export void pause(std :: string text = "Нажмите enter, чтобы закрыть окно...") {
+export void Pause(std :: string text = "Нажмите enter, чтобы закрыть окно...") {
    std :: print("{}", text);
    std :: cin.clear();
    std::cin.ignore(std::numeric_limits<std::streamsize> ::max(), '\n');
    std::cin.get();
 }
-export void printSeparLine(int size = 15) {
+export void PrintSeparLine(int size = 15) {
     for (int i = 0; i < size; i++) {
         std::cout << "-";
     }

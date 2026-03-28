@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "lab2\\CMakeFiles\\lab2_utils.dir\\lab2_utils.cppm.obj",
+            "outputs": [
+                "C:\\Users\\Teymur\\Desktop\\OOP\\LABS\\MyLabs\\build\\vc140.pdb",
+                "lab2\\CMakeFiles\\lab2_utils.dir\\lab2_utils.cppm.obj.ddi",
+                "lab2_utils.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "lab2_utils",
+                    "source-path": "c:\\users\\teymur\\desktop\\oop\\labs\\mylabs\\lab2\\lab2_utils.cppm",
+                    "is-interface": true
+                }
+            ],
+            "requires": [
+                {
+                    "logical-name": "std"
+                },
+                {
+                    "logical-name": "LabUtils"
+                }
+            ]
+        }
+    ]
+}

@@ -4,7 +4,7 @@ using namespace std;
 
 
 int main(){
-    printMetadata(1, "Аббасов Теймур");
+    PrintMetadata(1, "Аббасов Теймур");
 
     bool correct = true;
 
@@ -32,10 +32,6 @@ int main(){
         
     } while (correct == false);
     
-
-
-    
-    pause();
     return 0;
 }
 

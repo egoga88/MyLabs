@@ -1,0 +1,3 @@
+-reference std=CMakeFiles\__cmake_cxx23.dir\std.ifc
+-reference LabUtils=modules\CMakeFiles\common_mod.dir\LabUtils.ifc
+-reference lab2_utils=lab2\CMakeFiles\lab2_utils.dir\lab2_utils.ifc

@@ -1,0 +1,3 @@
+-interface
+-ifcOutput modules\CMakeFiles\common_mod.dir\LabUtils.ifc
+-reference std=CMakeFiles\__cmake_cxx23.dir\std.ifc
