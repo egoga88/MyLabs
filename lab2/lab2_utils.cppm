@@ -78,6 +78,11 @@ export void ChoiceFillingMethod(int& size, std::vector<int>& subsequence) {
         PrintSeparLine(25);
         OutputVector(size, subsequence);
     }
+    else {
+        RandInputVector(size, subsequence);
+        PrintSeparLine(25);
+        OutputVector(size, subsequence);
+    }
 }
 
 export int SumSubsequence(int size, const std::vector<int>& subsequence) {

@@ -2,3 +2,4 @@
 out/
 *.pdb
 build/
+*.json
