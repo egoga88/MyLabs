@@ -13,12 +13,7 @@ export void PrintMetadata(int labnum, std::string author, int variant = 1, std::
     std::println("Вариант: {}", variant);
     PrintSeparLine(25);
 }
-export void Pause(std :: string text = "Нажмите enter, чтобы закрыть окно...") {
-   std :: print("{}", text);
-   std :: cin.clear();
-   std::cin.ignore(std::numeric_limits<std::streamsize> ::max(), '\n');
-   std::cin.get();
-}
+
 export void PrintSeparLine(int size = 15) {
     for (int i = 0; i < size; i++) {
         std::cout << "-";
