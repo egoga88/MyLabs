@@ -5,12 +5,12 @@ export module LabUtils;
 
 void PrintSeparLine(int size);
 
-export void PrintMetadata(int labnum, std::string author, int variant = 1, std::string group = "6113") {
+export void PrintMetadata(int labnum, int variant = 1, std::string author = "Аббасов Теймур",  std::string group = "6113") {
     PrintSeparLine(25);
-    std::println("Лабораторная №{}", labnum);
-    std::println("Группа: {}", group);
-    std::println("Автор: {}", author);
-    std::println("Вариант: {}", variant);
+    std::println("{:>15} №{}","Лабораторная", labnum);
+    std::println("{:>7}: {}", "Группа", group);
+    std::println("{:>7}: {}", "Автор", author);
+    std::println("{:>7}: {}", "Вариант", variant);
     PrintSeparLine(25);
 }
 

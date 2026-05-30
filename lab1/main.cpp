@@ -4,10 +4,8 @@ using namespace std;
 
 
 int main(){
-    PrintMetadata(1, "Аббасов Теймур");
-
+    PrintMetadata(1, 1);
     bool correct = true;
-
     do
     {
         print("Введите кол-во элементов последовательности: ");

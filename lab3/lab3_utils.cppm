@@ -1,22 +1,8 @@
 export module lab3_utils;
 import std;
 import LabUtils;
+import classes;
 
-
-export class SquareSequence {
-private:
-	int c;
-public:
-	SquareSequence() : c(0) {}
-	SquareSequence(int value) : c(value) {}
-	int operator()(int n) const {
-		return n * n + c;
-	}
-	int GetC() const {
-		return c;
-
-	}
-};
 
 export void OutputVector(const std::vector<SquareSequence>& vect, int n) {
 	for (int i = 0; i < vect.size(); i++) {
@@ -27,13 +13,15 @@ export void AddSequence(std::vector<SquareSequence>& vect) {
 	std::print("Введите индекс вставки: ");
 	int index = 0;
 	std::cin >> index;
+	if (vect.size() < index) {
+		std::println("Вы вышли за границы");
+		return;
+	}
 	std::print("Введите значение сдвига с: ");
 	int c = 0;
 	std::cin >> c;
-	if (vect.size() < index) {
-		vect.resize(index);
-	}
-	vect.insert(vect.begin() + index, SquareSequence(c));
+	SquareSequence currentSequence(c);
+	vect.insert(vect.begin() + index, currentSequence);
 	std::println("Последовательность со сдвигом {} добавлена", c);
 	
 }
@@ -50,7 +38,7 @@ export void RemoveSequence(std::vector<SquareSequence>& vect) {
 	}
 
 }
-export int FindSequenceWithMinValue(const std::vector<SquareSequence>& vect, int n) {
+int FindSequenceWithMinValue(const std::vector<SquareSequence>& vect, int n) {
 	if (vect.size() != 0) {
 		int MinIndex = 0;
 		int MinValue = vect[0](n);
@@ -66,53 +54,17 @@ export int FindSequenceWithMinValue(const std::vector<SquareSequence>& vect, int
 		return -1;
 	}
 }
-export void Menu(std::vector<SquareSequence>& vect) {
-
-	int choice = 1;
-	int n = 1;
-	while (choice != 0) {
-		std::println("[1] Добавить новую последовательность");
-		std::println("[2] Удалить последовательность");
-		std::println("[3] Вывести значения n-го члена всех последовательностей");
-		std::println("[4] Найти последовательность с минимальным n-ым членом");
-		std::println("[5] Задать значение n(по умолчанию 1)");
-		std::println("[0] Выход");
-		std::print("Выберите пункт меню: ");
-		std::cin >> choice;
-		PrintSeparLine(22);
-
-		switch(choice){
-		case 1:
-			AddSequence(vect);
-			PrintSeparLine(22);
-			break;
-		case 2:
-			RemoveSequence(vect);
-			PrintSeparLine(22);
-			break;
-			
-		case 3:
-			OutputVector(vect, n);
-			PrintSeparLine(22);
-			break;
-		case 4: {
-			int idx = FindSequenceWithMinValue(vect, n);
-			if (idx < 0) {
-				std::println("Список пуст");
-			}
-			else {
-				std::println("Последовательность с мин n-ым членом: {}. {}", idx, vect[idx](n));
-				PrintSeparLine(22);	
-			}
-			break;
-			
-			
-		}
-			
-		case 5:
-			std::print("Введите n:");
-			std::cin >> n;
-			break;
-		}
+export void OutputSequenceWithMinValue(const std::vector<SquareSequence>& vect, int n) {
+	int idx = FindSequenceWithMinValue(vect, n);
+	if (idx < 0) {
+		std::println("Список пуст");
 	}
+	else {
+		std::println("Последовательность с мин n-ым членом: {}. {}", idx, vect[idx](n));
+		
+	}
+}
+export void InputN(int& n) {
+	std::print("Введите n:");
+	std::cin >> n;
 }

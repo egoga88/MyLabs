@@ -9,7 +9,7 @@ import lab2_utils;
 
 
 int main(){
-    PrintMetadata(2, "Аббасов Теймур");
+    PrintMetadata(2, 1);
   
     
     vector<int> vec(0, 0);
