@@ -1,7 +1,7 @@
-module; 
+export module LabUtils;
+
 export import std;
 
-export module LabUtils;
 
 void PrintSeparLine(int size);
 

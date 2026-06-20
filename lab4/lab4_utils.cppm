@@ -1,89 +1,77 @@
-export module lab4_utils
+export module lab4_utils;
 import std;
 import LabUtils;
+import classes;
 
 
-export class Sequence {
-public:
-	virtual int operator()(int n) const = 0;
-	virtual ~Sequence() = default;
-};
-export class SquareSequence : public Sequence {
-private:
-	int c;
-public:
-	SquareSequence() : c(0) {}
-	SquareSequence(int value) : c(value) {}
-	int operator()(int n) const override {
-		return n * n + c;
-	}
-	int GetC() const {
-		return c;
 
-	}
-};
-export class FactorialSequence : public Sequence {
-public:
-	int operator()(int n) const override {
-		if (n <= 1) return 1;
-		if (n > 1) {
-			int res = 1;
-			for (int i = n; i > 1; i--) {
-				res *= i;
-			}
-			return res;
-		}
-	}
-};
-void OutputVector(const std::vector<std::unique_ptr<Sequence>>& vect, int n) {
+export void OutputVector(const SequenceContainer& container) {
+	const auto& vect = container.getVector();
+	int n = container.getN();
 	for (int i = 0; i < vect.size(); i++) {
 		std::println("{}. {} при n: {}", i, (*vect.at(i))(n), n);
 	}
 }
-void AddSequence(std::vector<std::unique_ptr<Sequence>>& vect) {
-	std::print("Введите индекс вставки: ");
-	int index = 0;
-	std::cin >> index;
-	if (vect.size() < index) {
-		std::println("Вы вышли за границы");
-		return;
-	}
+export void AddSequence(SequenceContainer & container) {
 	int choice = 0;
-	std::print("Выберите тип последовательности(0 - n*n/1 - n!): ");
+	std::println("[1] - Квадратичная\n[2] - Последовательность факториалов");
+	std::println("Выберите тип последовательности:");
 	std::cin >> choice;
-
-	if (choice == 0) {
-		std::print("Введите значение сдвига с: ");
-		int c = 0;
-		std::cin >> c;
-		vect.insert(vect.begin() + index, std::make_unique<SquareSequence>(c));
-		std::println("Последовательность со сдвигом {} добавлена", c);
-	}
-	else {
-
-		vect.insert(vect.begin() + index, std::make_unique<FactorialSequence>());
-		std::println("Последовательность добавлена");
-	}
-}
-
-void RemoveSequence(std::vector< std::unique_ptr<Sequence>>& vect) {
-	std::print("Введите индекс элемента: ");
-	int index = 0;
+	
+	size_t index = 0;
+	std::println("Введите индекс вставки: ");
 	std::cin >> index;
-	if (index >= vect.size()) {
-		std::println("Неверный аргумент");
+	if (choice == 1) {
+		int c = 0;
+		std::println("Введите значение сдвига с:");
+		std::cin >> c;
+		try
+		{
+			container.AddSequence(index, std::make_unique<SquareSequence>(c));
+			std::println("Последовательность добавлена!");
+		}
+		catch (const std::exception& e)
+		{
+			std::println("Ошибка! {}", e.what());
+		}
 	}
-	else {
-		vect.erase(vect.begin() + index);
-		std::println("Поседовательность с индексом {} удалена", index);
+	else
+	{
+		try
+		{
+			container.AddSequence(index, std::make_unique<FactorialSequence>());
+			std::println("Последовательность добавлена!");
+		}
+		catch (const std::exception& e)
+		{
+			std::println("Ошибка! {}", e.what());
+		}
+
+	}
+}
+
+export void RemoveSequence(SequenceContainer& container) {
+	size_t index = 0;
+	std::println("Введите индекс: ");
+	std::cin >> index;
+	try
+	{
+		container.RemoveSequence(index);
+		std::println("Последовательность удалена!");
+	}
+	catch (const std::exception& e)
+	{
+		std::println("Ошибка! {}", e.what());
 	}
 
 }
-Sequence* FindSequenceWithMinValue(const std::vector<std::unique_ptr<Sequence>>& vect, int n) {
+Sequence* FindSequenceWithMinValue(const SequenceContainer& container) {
+	const auto& vect = container.getVector();
+	int n = container.getN();
 	if (vect.size() != 0) {
-		int MinIndex = 0;
+		size_t MinIndex = 0;
 		int MinValue = (*vect[0])(n);
-		for (int i = 0; i < vect.size(); i++) {
+		for (size_t i = 0; i < vect.size(); i++) {
 			if ((*vect[i])(n) < MinValue) {
 				MinValue = (*vect[i])(n);
 				MinIndex = i;
@@ -96,53 +84,20 @@ Sequence* FindSequenceWithMinValue(const std::vector<std::unique_ptr<Sequence>>&
 	}
 }
 
-export void Menu(std::vector<std::unique_ptr<Sequence>>& vect) {
-
-	int choice = 1;
-	int n = 1;
-	while (choice != 0) {
-		std::println("[1] Добавить новую последовательность");
-		std::println("[2] Удалить последовательность");
-		std::println("[3] Вывести значения n-го члена всех последовательностей");
-		std::println("[4] Найти последовательность с минимальным n-ым членом");
-		std::println("[5] Задать значение n(по умолчанию 1)");
-		std::println("[0] Выход");
-		std::print("Выберите пункт меню: ");
-		std::cin >> choice;
-		PrintSeparLine(22);
-
-		switch (choice) {
-		case 1:
-			AddSequence(vect);
-			PrintSeparLine(22);
-			break;
-		case 2:
-			RemoveSequence(vect);
-			PrintSeparLine(22);
-			break;
-
-		case 3:
-			OutputVector(vect, n);
-			PrintSeparLine(22);
-			break;
-		case 4: {
-			Sequence* ptr = FindSequenceWithMinValue(vect, n);
-			if (ptr == nullptr) {
-				std::println("Список пуст");
-			}
-			else {
-				std::println("Последовательность с мин n-ым членом: {}", (*ptr)(n));
-				PrintSeparLine(22);
-			}
-			break;
-
-
-		}
-
-		case 5:
-			std::print("Введите n:");
-			std::cin >> n;
-			break;
-		}
+export void OutputSequenceWithMinValue(const SequenceContainer& container) {
+	Sequence* seq = FindSequenceWithMinValue(container);
+	if (seq != nullptr) {
+		std::println("{}", (*seq)(container.getN()));
 	}
+	else
+	{
+		std::println("Список пуст");
+	}
+	
+}
+export void InputN(SequenceContainer& container) {
+	int n = 0;
+	std::print("Введите n: ");
+	std::cin >> n;
+	container.setN(n);
 }

@@ -18,7 +18,6 @@ export void InputVector(std::vector<int>& subsequence) {
     bool isCorrect = true;
     do
     {
-
         int fillingMethod = 1;
         int n = 0;
         std::println("Выберите способ заполнения последовательности: ");

@@ -1,70 +1,77 @@
 export module lab3_utils;
 import std;
-import LabUtils;
 import classes;
+using namespace std;
 
+export int FindSequenceWithMinValue(const std::vector<SquareSequence>& vect, int n) {
+    if (vect.size() != 0) {
+        size_t MinIndex = 0;
+        int MinValue = vect[0](n);
+        for (size_t i = 0; i < vect.size(); i++) {
+            if (vect[i](n) < MinValue) {
+                MinValue = vect[i](n);
+                MinIndex = i;
+            }
+        }
+        return static_cast<int>(MinIndex);
+    }
+    else {
+        return -1;
+    }
+}
+export void AddSequence(SequenceContainer& container) {
 
-export void OutputVector(const std::vector<SquareSequence>& vect, int n) {
-	for (int i = 0; i < vect.size(); i++) {
-		std::println("{}. {} при n: {}",i,  vect.at(i)(n), n);
-	}
-}
-export void AddSequence(std::vector<SquareSequence>& vect) {
-	std::print("Введите индекс вставки: ");
-	int index = 0;
-	std::cin >> index;
-	if (vect.size() < index) {
-		std::println("Вы вышли за границы");
-		return;
-	}
-	std::print("Введите значение сдвига с: ");
-	int c = 0;
-	std::cin >> c;
-	SquareSequence currentSequence(c);
-	vect.insert(vect.begin() + index, currentSequence);
-	std::println("Последовательность со сдвигом {} добавлена", c);
-	
-}
-export void RemoveSequence(std::vector<SquareSequence>& vect) {
-	std::print("Введите индекс элемента: ");
-	int index = 0;
-	std::cin >> index;
-	if (index >= vect.size()) {
-		std::println("Неверный аргумент");
-	}
-	else {
-		vect.erase(vect.begin() + index);
-		std::println("Поседовательность с индексом {} удалена",index );
-	}
+    size_t index = 0;
+    println("Введите индекс вставки: ");
+    std::cin >> index;
+    int c = 0;
+    println("Введите значение сдвига с:");
+    std::cin >> c;
+    try
+    {
+        container.AddSequence(index, SquareSequence(c));
+        std::println("Последовательность добавлена!");
+    }
+    catch (const std::exception& e)
+    {
+        std::println("Ошибка! {}", e.what());
+    }
 
 }
-int FindSequenceWithMinValue(const std::vector<SquareSequence>& vect, int n) {
-	if (vect.size() != 0) {
-		int MinIndex = 0;
-		int MinValue = vect[0](n);
-		for (int i = 0; i < vect.size(); i++) {
-			if (vect[i](n) < MinValue) {
-				MinValue = vect[i](n);
-				MinIndex = i;
-			}
-		}
-		return MinIndex;
-	}
-	else {
-		return -1;
-	}
+export void RemoveSequence(SequenceContainer& container) {
+    size_t index = 0;
+    println("Введите индекс: ");
+    std::cin >> index;
+    try
+    {
+        container.RemoveSequence(index);
+        std::println("Последовательность удалена!");
+    }
+    catch (const std::exception& e)
+    {
+        std::println("Ошибка! {}", e.what());
+    }
 }
-export void OutputSequenceWithMinValue(const std::vector<SquareSequence>& vect, int n) {
-	int idx = FindSequenceWithMinValue(vect, n);
-	if (idx < 0) {
-		std::println("Список пуст");
-	}
-	else {
-		std::println("Последовательность с мин n-ым членом: {}. {}", idx, vect[idx](n));
-		
-	}
+export void OutputSequenceWithMinValue(const SequenceContainer& container) {
+    int minIndex = FindSequenceWithMinValue(container.getVector(), container.getN());
+    if (minIndex >= 0) {
+        println("Последовательность с минимальным n-ым членом: {}. {}", minIndex, container.getVector()[minIndex](container.getN()));
+    }
+    else {
+        println("Список пуст");
+    }
+
 }
-export void InputN(int& n) {
-	std::print("Введите n:");
-	std::cin >> n;
+export void InputN(SequenceContainer& container) {
+    int n = 0;
+    print("Введите n:");
+    cin >> n;
+    container.setN(n);
 }
+export void OutputVector(const SequenceContainer& container) {
+    vector<SquareSequence> vect = container.getVector();
+    for (size_t i = 0; i < vect.size(); i++) {
+        std::println("{}. {}", i, vect[i](container.getN()));
+    }
+}
+
